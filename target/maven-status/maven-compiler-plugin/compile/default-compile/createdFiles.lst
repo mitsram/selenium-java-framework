@@ -1,0 +1,5 @@
+com/framework/config/ConfigManager.class
+com/framework/pages/BasePage.class
+com/framework/pages/LoginPage.class
+com/framework/factory/BrowserFactory$BrowserType.class
+com/framework/factory/BrowserFactory.class

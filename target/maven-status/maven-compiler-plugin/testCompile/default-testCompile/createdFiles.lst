@@ -1,0 +1,9 @@
+com/framework/stepdefs/SoapApiSteps.class
+com/framework/api/OpenApiValidator.class
+com/framework/context/TestContext.class
+com/framework/stepdefs/RestApiSteps.class
+com/framework/api/SoapClient.class
+com/framework/stepdefs/Hooks.class
+com/framework/stepdefs/WebSteps.class
+com/framework/runners/TestRunner.class
+com/framework/api/RestClient.class
