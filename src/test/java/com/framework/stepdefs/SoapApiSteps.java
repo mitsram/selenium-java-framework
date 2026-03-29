@@ -1,6 +1,7 @@
 package com.framework.stepdefs;
 
 import com.framework.api.SoapClient;
+import com.framework.api.WsdlSchemaValidator;
 import com.framework.context.TestContext;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
@@ -35,5 +36,10 @@ public class SoapApiSteps {
     @Then("the SOAP response should contain {string}")
     public void verifySoapBody(String expected) {
         assertTrue(response.getBody().asString().contains(expected));
+    }
+
+    @Then("the SOAP response should conform to the schema for {string}")
+    public void verifySoapContract(String expectedElement) {
+        WsdlSchemaValidator.validate(response.getBody().asString(), expectedElement);
     }
 }

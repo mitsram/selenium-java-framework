@@ -9,10 +9,12 @@ Feature: Pet Store REST API
     When I send a GET request to "/pet/1"
     Then the response status code should be 200
 
+  @contract
   Scenario: Find pet by status — validated against OpenAPI spec
     When I send a validated GET request to "/pet/findByStatus?status=available"
     Then the response status code should be 200
 
+  @contract
   Scenario: Create a new pet — validated against OpenAPI spec
     When I send a validated POST request to "/pet" with body:
       """

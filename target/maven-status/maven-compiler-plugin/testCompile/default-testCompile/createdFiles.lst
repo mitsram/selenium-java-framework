@@ -1,5 +1,6 @@
 com/framework/stepdefs/SoapApiSteps.class
 com/framework/api/OpenApiValidator.class
+com/framework/api/WsdlSchemaValidator.class
 com/framework/context/TestContext.class
 com/framework/stepdefs/RestApiSteps.class
 com/framework/api/SoapClient.class
