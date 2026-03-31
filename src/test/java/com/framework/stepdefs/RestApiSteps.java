@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RestApiSteps {
 
     private final TestContext ctx;
-    private Response response;
 
     public RestApiSteps(TestContext ctx) {
         this.ctx = ctx;
@@ -23,27 +22,27 @@ public class RestApiSteps {
 
     @When("I send a GET request to {string}")
     public void sendGet(String path) {
-        response = ctx.rest().get(path);
+        ctx.setLastResponse(ctx.rest().get(path));
     }
 
     @When("I send a POST request to {string} with body:")
     public void sendPost(String path, String body) {
-        response = ctx.rest().post(path, body);
+        ctx.setLastResponse(ctx.rest().post(path, body));
     }
 
     @Then("the response status code should be {int}")
     public void verifyStatusCode(int expected) {
-        assertEquals(expected, response.getStatusCode());
+        assertEquals(expected, ctx.getLastResponse().getStatusCode());
     }
 
     @Then("the response body should contain {string}")
     public void verifyBodyContains(String expected) {
-        assertTrue(response.getBody().asString().contains(expected));
+        assertTrue(ctx.getLastResponse().getBody().asString().contains(expected));
     }
 
     @Then("the response JSON path {string} should be {string}")
     public void verifyJsonPath(String jsonPath, String expected) {
-        String actual = response.jsonPath().getString(jsonPath);
+        String actual = ctx.getLastResponse().jsonPath().getString(jsonPath);
         assertEquals(expected, actual);
     }
 
@@ -51,23 +50,23 @@ public class RestApiSteps {
 
     @When("I send a validated GET request to {string}")
     public void sendValidatedGet(String path) {
-        response = RestAssured.given()
+        ctx.setLastResponse(RestAssured.given()
                 .baseUri(ConfigManager.get("api.base.url"))
                 .filter(OpenApiValidator.filter())
                 .accept("application/json")
                 .when()
-                .get(path);
+                .get(path));
     }
 
     @When("I send a validated POST request to {string} with body:")
     public void sendValidatedPost(String path, String body) {
-        response = RestAssured.given()
+        ctx.setLastResponse(RestAssured.given()
                 .baseUri(ConfigManager.get("api.base.url"))
                 .filter(OpenApiValidator.filter())
                 .contentType("application/json")
                 .accept("application/json")
                 .body(body)
                 .when()
-                .post(path);
+                .post(path));
     }
 }
