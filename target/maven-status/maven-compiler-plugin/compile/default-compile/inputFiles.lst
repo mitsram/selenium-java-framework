@@ -1,3 +1,7 @@
+/Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/main/java/com/framework/api/OpenApiValidator.java
+/Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/main/java/com/framework/api/RestClient.java
+/Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/main/java/com/framework/api/SoapClient.java
+/Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/main/java/com/framework/api/WsdlSchemaValidator.java
 /Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/main/java/com/framework/config/ConfigManager.java
 /Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/main/java/com/framework/factory/BrowserFactory.java
 /Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/main/java/com/framework/pages/BasePage.java

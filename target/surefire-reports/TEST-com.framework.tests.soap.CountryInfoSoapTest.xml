@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="io.cucumber.junit.platform.engine.CucumberTestEngine" time="19.952" tests="12" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.framework.tests.soap.CountryInfoSoapTest" time="3.013" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="webdriver.chrome.driver" value="/Users/mitsram/.cache/selenium/chromedriver/mac-arm64/146.0.7680.165/chromedriver"/>
@@ -60,134 +60,12 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="Pet Store REST API - Find pet by status" classname="Pet Store REST API" time="2.924">
-    <system-out><![CDATA[
-@api @rest
-Scenario: Find pet by status                                        &amp#27;[90m# src/test/resources/features/rest/petstore_api.feature:4&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI send a GET request to &amp#27;[0m&amp#27;[32m&amp#27;[1m"/pet/findByStatus?status=available"&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.RestApiSteps.sendGet(java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe response status code should be &amp#27;[0m&amp#27;[32m&amp#27;[1m200&amp#27;[0m                       &amp#27;[90m# com.framework.stepdefs.RestApiSteps.verifyStatusCode(int)&amp#27;[0m
-]]></system-out>
-    <system-err><![CDATA[Mar 31, 2026 3:44:58 PM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
-WARNING: Discovering tests using the cucumber.features property. Other discovery selectors are ignored!
-
-This is a work around for the limited JUnit 5 support in Maven and Gradle. Please request/upvote/sponsor/ect better support for JUnit 5 discovery selectors. For details see: https://github.com/cucumber/cucumber-jvm/pull/2498
-
-If you are using the JUnit 5 Suite Engine, Platform Launcher API or Console Launcher you should not use this property. Please consult the JUnit 5 documentation on test selection.
-]]></system-err>
-  </testcase>
-  <testcase name="Pet Store REST API - Get pet by ID" classname="Pet Store REST API" time="0.974">
-    <system-out><![CDATA[
-@api @rest
-Scenario: Get pet by ID                       &amp#27;[90m# src/test/resources/features/rest/petstore_api.feature:8&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI send a GET request to &amp#27;[0m&amp#27;[32m&amp#27;[1m"/pet/1"&amp#27;[0m       &amp#27;[90m# com.framework.stepdefs.RestApiSteps.sendGet(java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe response status code should be &amp#27;[0m&amp#27;[32m&amp#27;[1m200&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.RestApiSteps.verifyStatusCode(int)&amp#27;[0m
+  <testcase name="shouldValidateCapitalCityResponseAgainstSchema" classname="com.framework.tests.soap.CountryInfoSoapTest" time="0.65">
+    <system-out><![CDATA[15:45:27.426 [main] INFO  c.framework.api.WsdlSchemaValidator - SOAP contract validation PASSED for <CapitalCityResponse>
 ]]></system-out>
   </testcase>
-  <testcase name="Pet Store REST API - Find pet by status — validated against OpenAPI spec" classname="Pet Store REST API" time="1.67">
-    <system-out><![CDATA[
-@api @rest @contract
-Scenario: Find pet by status — validated against OpenAPI spec                 &amp#27;[90m# src/test/resources/features/rest/petstore_api.feature:13&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI send a validated GET request to &amp#27;[0m&amp#27;[32m&amp#27;[1m"/pet/findByStatus?status=available"&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.RestApiSteps.sendValidatedGet(java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe response status code should be &amp#27;[0m&amp#27;[32m&amp#27;[1m200&amp#27;[0m                                 &amp#27;[90m# com.framework.stepdefs.RestApiSteps.verifyStatusCode(int)&amp#27;[0m
-]]></system-out>
-  </testcase>
-  <testcase name="Pet Store REST API - Create a new pet — validated against OpenAPI spec" classname="Pet Store REST API" time="1.642">
-    <system-out><![CDATA[
-@api @rest @contract
-Scenario: Create a new pet — validated against OpenAPI spec &amp#27;[90m# src/test/resources/features/rest/petstore_api.feature:18&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI send a validated POST request to &amp#27;[0m&amp#27;[32m&amp#27;[1m"/pet"&amp#27;[0m&amp#27;[32m with body:&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.RestApiSteps.sendValidatedPost(java.lang.String,java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe response status code should be &amp#27;[0m&amp#27;[32m&amp#27;[1m200&amp#27;[0m               &amp#27;[90m# com.framework.stepdefs.RestApiSteps.verifyStatusCode(int)&amp#27;[0m
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe response JSON path &amp#27;[0m&amp#27;[32m&amp#27;[1m"name"&amp#27;[0m&amp#27;[32m should be &amp#27;[0m&amp#27;[32m&amp#27;[1m"Buddy"&amp#27;[0m       &amp#27;[90m# com.framework.stepdefs.RestApiSteps.verifyJsonPath(java.lang.String,java.lang.String)&amp#27;[0m
-]]></system-out>
-  </testcase>
-  <testcase name="Country Info SOAP Service - Get capital city by country code" classname="Country Info SOAP Service" time="0.895">
-    <system-out><![CDATA[
-@api @soap
-Scenario: Get capital city by country code                   &amp#27;[90m# src/test/resources/features/soap/country_info.feature:4&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI send a SOAP request to get the capital city of &amp#27;[0m&amp#27;[32m&amp#27;[1m"US"&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.sendCapitalCityRequest(java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe SOAP response status should be &amp#27;[0m&amp#27;[32m&amp#27;[1m200&amp#27;[0m                &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapStatus(int)&amp#27;[0m
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe SOAP response should contain &amp#27;[0m&amp#27;[32m&amp#27;[1m"Washington"&amp#27;[0m          &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapBody(java.lang.String)&amp#27;[0m
-]]></system-out>
-  </testcase>
-  <testcase name="Country Info SOAP Service - Get country name by ISO code" classname="Country Info SOAP Service" time="0.579">
-    <system-out><![CDATA[
-@api @soap
-Scenario: Get country name by ISO code                       &amp#27;[90m# src/test/resources/features/soap/country_info.feature:9&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI send a SOAP request to get the country name of &amp#27;[0m&amp#27;[32m&amp#27;[1m"DE"&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.sendCountryNameRequest(java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe SOAP response status should be &amp#27;[0m&amp#27;[32m&amp#27;[1m200&amp#27;[0m                &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapStatus(int)&amp#27;[0m
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe SOAP response should contain &amp#27;[0m&amp#27;[32m&amp#27;[1m"Germany"&amp#27;[0m             &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapBody(java.lang.String)&amp#27;[0m
-]]></system-out>
-  </testcase>
-  <testcase name="Country Info SOAP Service - Get currency information by country code" classname="Country Info SOAP Service" time="0.644">
-    <system-out><![CDATA[
-@api @soap
-Scenario: Get currency information by country code       &amp#27;[90m# src/test/resources/features/soap/country_info.feature:14&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI send a SOAP request to get the currency of &amp#27;[0m&amp#27;[32m&amp#27;[1m"GB"&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.sendCurrencyRequest(java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe SOAP response status should be &amp#27;[0m&amp#27;[32m&amp#27;[1m200&amp#27;[0m            &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapStatus(int)&amp#27;[0m
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe SOAP response should contain &amp#27;[0m&amp#27;[32m&amp#27;[1m"GBP"&amp#27;[0m             &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapBody(java.lang.String)&amp#27;[0m
-]]></system-out>
-  </testcase>
-  <testcase name="Country Info SOAP Service - Get country flag URL" classname="Country Info SOAP Service" time="0.573">
-    <system-out><![CDATA[
-@api @soap
-Scenario: Get country flag URL                             &amp#27;[90m# src/test/resources/features/soap/country_info.feature:19&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI send a SOAP request to get the flag of &amp#27;[0m&amp#27;[32m&amp#27;[1m"FR"&amp#27;[0m       &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.sendCountryFlagRequest(java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe SOAP response status should be &amp#27;[0m&amp#27;[32m&amp#27;[1m200&amp#27;[0m              &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapStatus(int)&amp#27;[0m
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe SOAP response should contain &amp#27;[0m&amp#27;[32m&amp#27;[1m"CountryFlagResult"&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapBody(java.lang.String)&amp#27;[0m
-]]></system-out>
-  </testcase>
-  <testcase name="Country Info SOAP Service - Capital city response conforms to schema" classname="Country Info SOAP Service" time="0.635">
-    <system-out><![CDATA[
-@api @soap @contract
-Scenario: Capital city response conforms to schema                             &amp#27;[90m# src/test/resources/features/soap/country_info.feature:25&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI send a SOAP request to get the capital city of &amp#27;[0m&amp#27;[32m&amp#27;[1m"US"&amp#27;[0m                   &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.sendCapitalCityRequest(java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe SOAP response status should be &amp#27;[0m&amp#27;[32m&amp#27;[1m200&amp#27;[0m                                  &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapStatus(int)&amp#27;[0m
-15:45:09.481 [main] INFO  c.framework.api.WsdlSchemaValidator - SOAP contract validation PASSED for <CapitalCityResponse>
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe SOAP response should conform to the schema for &amp#27;[0m&amp#27;[32m&amp#27;[1m"CapitalCityResponse"&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapContract(java.lang.String)&amp#27;[0m
-]]></system-out>
-  </testcase>
-  <testcase name="Country Info SOAP Service - Country name response conforms to schema" classname="Country Info SOAP Service" time="0.638">
-    <system-out><![CDATA[
-@api @soap @contract
-Scenario: Country name response conforms to schema                             &amp#27;[90m# src/test/resources/features/soap/country_info.feature:31&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI send a SOAP request to get the country name of &amp#27;[0m&amp#27;[32m&amp#27;[1m"JP"&amp#27;[0m                   &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.sendCountryNameRequest(java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe SOAP response status should be &amp#27;[0m&amp#27;[32m&amp#27;[1m200&amp#27;[0m                                  &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapStatus(int)&amp#27;[0m
-15:45:10.120 [main] INFO  c.framework.api.WsdlSchemaValidator - SOAP contract validation PASSED for <CountryNameResponse>
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe SOAP response should conform to the schema for &amp#27;[0m&amp#27;[32m&amp#27;[1m"CountryNameResponse"&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.SoapApiSteps.verifySoapContract(java.lang.String)&amp#27;[0m
-]]></system-out>
-  </testcase>
-  <testcase name="Login functionality - Successful login" classname="Login functionality" time="4.877">
-    <system-out><![CDATA[
-@web
-Scenario: Successful login                                                      &amp#27;[90m# src/test/resources/features/web/login.feature:4&amp#27;[0m
-15:45:10.131 [main] INFO  com.framework.stepdefs.Hooks - >>> Starting browser for: Successful login
-15:45:10.413 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
-15:45:10.424 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/mitsram/.cache/selenium/chromedriver/mac-arm64/146.0.7680.165/chromedriver
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mI open the login page&amp#27;[0m                                                   &amp#27;[90m# com.framework.stepdefs.WebSteps.openLoginPage()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI login with username &amp#27;[0m&amp#27;[32m&amp#27;[1m"tomsmith"&amp#27;[0m&amp#27;[32m and password &amp#27;[0m&amp#27;[32m&amp#27;[1m"SuperSecretPassword!"&amp#27;[0m     &amp#27;[90m# com.framework.stepdefs.WebSteps.login(java.lang.String,java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mI should see a flash message containing &amp#27;[0m&amp#27;[32m&amp#27;[1m"You logged into a secure area!"&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.WebSteps.verifyFlashMessage(java.lang.String)&amp#27;[0m
-]]></system-out>
-    <system-err><![CDATA[Mar 31, 2026 3:45:11 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 146
-Mar 31, 2026 3:45:11 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 146.0.7680.165. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.27.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
-  </testcase>
-  <testcase name="Login functionality - Failed login with invalid credentials" classname="Login functionality" time="3.849">
-    <system-out><![CDATA[
-@web
-Scenario: Failed login with invalid credentials                            &amp#27;[90m# src/test/resources/features/web/login.feature:9&amp#27;[0m
-15:45:15.003 [main] INFO  com.framework.stepdefs.Hooks - >>> Starting browser for: Failed login with invalid credentials
-15:45:15.005 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
-15:45:15.008 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/mitsram/.cache/selenium/chromedriver/mac-arm64/146.0.7680.165/chromedriver
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mI open the login page&amp#27;[0m                                              &amp#27;[90m# com.framework.stepdefs.WebSteps.openLoginPage()&amp#27;[0m
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI login with username &amp#27;[0m&amp#27;[32m&amp#27;[1m"invalid"&amp#27;[0m&amp#27;[32m and password &amp#27;[0m&amp#27;[32m&amp#27;[1m"invalid"&amp#27;[0m              &amp#27;[90m# com.framework.stepdefs.WebSteps.login(java.lang.String,java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mI should see a flash message containing &amp#27;[0m&amp#27;[32m&amp#27;[1m"Your username is invalid!"&amp#27;[0m &amp#27;[90m# com.framework.stepdefs.WebSteps.verifyFlashMessage(java.lang.String)&amp#27;[0m
-]]></system-out>
-    <system-err><![CDATA[Mar 31, 2026 3:45:15 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 146
-Mar 31, 2026 3:45:15 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 146.0.7680.165. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.27.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
-  </testcase>
+  <testcase name="shouldGetCapitalCity" classname="com.framework.tests.soap.CountryInfoSoapTest" time="0.605"/>
+  <testcase name="shouldGetCountryFlag" classname="com.framework.tests.soap.CountryInfoSoapTest" time="0.615"/>
+  <testcase name="shouldGetCountryName" classname="com.framework.tests.soap.CountryInfoSoapTest" time="0.571"/>
+  <testcase name="shouldGetCurrencyInfo" classname="com.framework.tests.soap.CountryInfoSoapTest" time="0.567"/>
 </testsuite>

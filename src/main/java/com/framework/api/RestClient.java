@@ -9,7 +9,6 @@ import java.util.Map;
 
 /**
  * Thin wrapper around Rest Assured for REST calls.
- * Each test gets its own instance via TestContext (PicoContainer).
  */
 public class RestClient {
 

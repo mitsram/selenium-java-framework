@@ -1,10 +1,9 @@
-/Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/api/OpenApiValidator.java
-/Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/api/RestClient.java
-/Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/api/SoapClient.java
-/Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/api/WsdlSchemaValidator.java
 /Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/context/TestContext.java
 /Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/runners/TestRunner.java
 /Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/stepdefs/Hooks.java
 /Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/stepdefs/RestApiSteps.java
 /Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/stepdefs/SoapApiSteps.java
 /Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/stepdefs/WebSteps.java
+/Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/tests/rest/PetStoreApiTest.java
+/Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/tests/soap/CountryInfoSoapTest.java
+/Users/mitsram/Workspace/Github/mitsram/selenium-java-framework/src/test/java/com/framework/tests/web/LoginTest.java

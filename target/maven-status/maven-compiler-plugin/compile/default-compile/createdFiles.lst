@@ -1,5 +1,9 @@
 com/framework/config/ConfigManager.class
 com/framework/pages/BasePage.class
+com/framework/api/SoapClient.class
 com/framework/pages/LoginPage.class
+com/framework/api/OpenApiValidator.class
 com/framework/factory/BrowserFactory$BrowserType.class
+com/framework/api/RestClient.class
+com/framework/api/WsdlSchemaValidator.class
 com/framework/factory/BrowserFactory.class

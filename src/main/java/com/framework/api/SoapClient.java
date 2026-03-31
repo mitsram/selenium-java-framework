@@ -17,6 +17,10 @@ public class SoapClient {
         this.baseUrl = ConfigManager.get("soap.base.url");
     }
 
+    public SoapClient(String baseUrl) {
+        this.baseUrl = baseUrl;
+    }
+
     public Response send(String soapAction, String xmlBody) {
         lastResponse = RestAssured.given()
                 .baseUri(baseUrl)

@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SoapApiSteps {
 
+    private static final String NS = "http://www.oorsprong.org/websamples.countryinfo";
     private final TestContext ctx;
     private Response response;
 
@@ -17,15 +18,44 @@ public class SoapApiSteps {
         this.ctx = ctx;
     }
 
-    @When("I send a SOAP {string} request adding {int} and {int}")
-    public void sendAddRequest(String action, int a, int b) {
+    @When("I send a SOAP request to get the capital city of {string}")
+    public void sendCapitalCityRequest(String countryCode) {
         String body = """
-                <Add xmlns="http://tempuri.org/">
-                  <intA>%d</intA>
-                  <intB>%d</intB>
-                </Add>""".formatted(a, b);
+                <CapitalCity xmlns="%s">
+                  <sCountryISOCode>%s</sCountryISOCode>
+                </CapitalCity>""".formatted(NS, countryCode);
 
-        response = ctx.soap().send(action, SoapClient.envelope(body));
+        response = ctx.soap().send(NS + "/CapitalCity", SoapClient.envelope(body));
+    }
+
+    @When("I send a SOAP request to get the country name of {string}")
+    public void sendCountryNameRequest(String countryCode) {
+        String body = """
+                <CountryName xmlns="%s">
+                  <sCountryISOCode>%s</sCountryISOCode>
+                </CountryName>""".formatted(NS, countryCode);
+
+        response = ctx.soap().send(NS + "/CountryName", SoapClient.envelope(body));
+    }
+
+    @When("I send a SOAP request to get the currency of {string}")
+    public void sendCurrencyRequest(String countryCode) {
+        String body = """
+                <CountryCurrency xmlns="%s">
+                  <sCountryISOCode>%s</sCountryISOCode>
+                </CountryCurrency>""".formatted(NS, countryCode);
+
+        response = ctx.soap().send(NS + "/CountryCurrency", SoapClient.envelope(body));
+    }
+
+    @When("I send a SOAP request to get the flag of {string}")
+    public void sendCountryFlagRequest(String countryCode) {
+        String body = """
+                <CountryFlag xmlns="%s">
+                  <sCountryISOCode>%s</sCountryISOCode>
+                </CountryFlag>""".formatted(NS, countryCode);
+
+        response = ctx.soap().send(NS + "/CountryFlag", SoapClient.envelope(body));
     }
 
     @Then("the SOAP response status should be {int}")
@@ -35,7 +65,8 @@ public class SoapApiSteps {
 
     @Then("the SOAP response should contain {string}")
     public void verifySoapBody(String expected) {
-        assertTrue(response.getBody().asString().contains(expected));
+        assertTrue(response.getBody().asString().contains(expected),
+                "Expected SOAP response to contain '%s'".formatted(expected));
     }
 
     @Then("the SOAP response should conform to the schema for {string}")
