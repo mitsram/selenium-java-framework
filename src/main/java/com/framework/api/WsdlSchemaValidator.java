@@ -24,7 +24,7 @@ import java.nio.charset.StandardCharsets;
  * Uses only JDK built-in javax.xml.validation — zero extra dependencies.
  *
  * Usage:
- *   WsdlSchemaValidator.validate(responseXml, "AddResponse");
+ *   WsdlSchemaValidator.validate(responseXml, "CapitalCityResponse");
  */
 public final class WsdlSchemaValidator {
 
@@ -60,7 +60,7 @@ public final class WsdlSchemaValidator {
      * Validates the SOAP body element against the XSD schema.
      *
      * @param soapResponseXml full SOAP envelope XML string
-     * @param expectedElement the expected root element inside soap:Body (e.g. "AddResponse")
+     * @param expectedElement the expected root element inside soap:Body (e.g. "CapitalCityResponse")
      * @throws AssertionError if the response does not conform to the schema
      */
     public static void validate(String soapResponseXml, String expectedElement) {

@@ -89,7 +89,6 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${rest-assured.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- OpenAPI Spec Validation -->
@@ -97,7 +96,6 @@
             <groupId>com.atlassian.oai</groupId>
             <artifactId>swagger-request-validator-restassured</artifactId>
             <version>${swagger-validator.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- Logging -->

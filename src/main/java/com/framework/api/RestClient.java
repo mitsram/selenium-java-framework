@@ -9,7 +9,6 @@ import java.util.Map;
 
 /**
  * Thin wrapper around Rest Assured for REST calls.
- * Each test gets its own instance via TestContext (PicoContainer).
  */
 public class RestClient {
 
@@ -17,8 +16,12 @@ public class RestClient {
     private Response lastResponse;
 
     public RestClient() {
+        this(ConfigManager.get("api.base.url"));
+    }
+
+    public RestClient(String baseUrl) {
         spec = RestAssured.given()
-                .baseUri(ConfigManager.get("api.base.url"))
+                .baseUri(baseUrl)
                 .contentType("application/json")
                 .accept("application/json");
     }

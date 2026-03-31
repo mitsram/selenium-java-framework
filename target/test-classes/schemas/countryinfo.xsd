@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified"
+           targetNamespace="http://www.oorsprong.org/websamples.countryinfo"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- CapitalCity -->
+  <xs:element name="CapitalCityResult" type="xs:string"/>
+  <xs:element name="CapitalCityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tns:CapitalCityResult" xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- CountryName -->
+  <xs:element name="CountryNameResult" type="xs:string"/>
+  <xs:element name="CountryNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tns:CountryNameResult" xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- CountryCurrency -->
+  <xs:element name="CountryCurrencyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CountryCurrencyResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sISOCode" type="xs:string"/>
+              <xs:element name="sName" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- CountryFlag -->
+  <xs:element name="CountryFlagResult" type="xs:string"/>
+  <xs:element name="CountryFlagResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tns:CountryFlagResult" xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
